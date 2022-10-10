@@ -1,7 +1,6 @@
-PROCEDURE dot_product(v1,v2)
+PROCEDURE dot_product(v1,v2,var sum: FLOAT)
 VAR
     i:INTEGER;
-    sum: FLOAT
     v1,v2: vector : ARRAY_OF FLOAT;
 BEGIN
     sum:=0;
@@ -15,13 +14,13 @@ END
 ALGORITHM orthogonal_vectors
 VAR
     v: vecteur : ARRAY_OF FLOAT[n];
-    n,i,j: INTEGER;
+    sum,n,i: INTEGER;
 BEGIN
+sum:=0;
     Write('enter the size of v');
     Read(n);
-FOR i FROM 0 TO v.length  DO
-    FOR j FROM 0 TO v.length  DO
-        IF (dot_product(v[i],v[j])=0) THEN
+FOR i FROM 0 TO v.length-1  DO
+        IF (dot_product(v[i][0],v[j][0]),sum) THEN
             Write('the vectors are orthogonal')
         END_IF
     END_FOR
